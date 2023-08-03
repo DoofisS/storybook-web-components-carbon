@@ -1,0 +1,30 @@
+@use "@carbon/styles/scss/config" as *;
+@use "@carbon/styles/scss/breakpoint" as *;
+@use "@carbon/styles/scss/spacing" as *;
+@use "@carbon/styles/scss/components/ui-shell/functions";
+
+@use "@carbon/themes/scss/themes" as *;
+@use "@carbon/themes" with (
+  $theme: ()
+);
+
+@use "@carbon/type";
+// Include type reset
+@include type.reset();
+
+// Include default type styles, targets h1, h2, h3, etc
+@include type.default-type();
+
+// Include utility classes for type-related properties
+@include type.type-classes();
+
+:root {
+  @include themes.theme($white);
+
+  --cds-button-primary: purple;
+  // --blue-60: red;
+}
+
+.my-selector {
+  font-size: type.type-scale(5);
+}
